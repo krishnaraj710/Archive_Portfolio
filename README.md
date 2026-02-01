@@ -14,13 +14,13 @@ MySQL Persistent Storage
 8 REST Endpoints (tested with Postman)
 
 🛠 Tech Stack
-text
+
 Frontend: None (Pure Backend API)
 Backend: Spring Boot 3.5.10 + JPA + Hibernate
 Database: MySQL 8.0 (H2 for dev)
 APIs: Yahoo Finance + CoinGecko (free)
 Testing: Postman
-Deployment: Ready for Heroku/Docker
+
 🚀 Quick Start
 1. Clone & Run
 bash
@@ -28,7 +28,8 @@ git clone https://github.com/YOUR_USERNAME/Api_Assets.git
 cd Api_Assets
 mvn spring-boot:run
 2. MySQL Setup (or use H2 for dev)
-text
+   
+
 # application.properties
 spring.datasource.url=jdbc:mysql://localhost:3306/assets_db
 spring.datasource.username=root
@@ -37,7 +38,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 
 3. Base URL
-text
+
 http://localhost:8080/api/assets
 📋 API Endpoints (Postman Ready)
 Method	Endpoint	Description	Sample Request
