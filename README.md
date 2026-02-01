@@ -34,6 +34,8 @@ spring.datasource.url=jdbc:mysql://localhost:3306/assets_db
 spring.datasource.username=root
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
+
+
 3. Base URL
 text
 http://localhost:8080/api/assets
@@ -47,6 +49,9 @@ GET	/api/assets/crypto	Crypto only	-
 GET	/api/assets/stock/AAPL	Specific stock	-
 GET	/api/assets/crypto/bitcoin	Specific crypto	-
 GET	/api/assets/dashboard	Dashboard (buyPrice/qty + LIVE prices)	-
+
+
+
 🧪 Postman Test Flow
 bash
 # 1. ADD STOCK
@@ -79,10 +84,12 @@ qty	INTEGER	Quantity held
 currentPrice	DECIMAL	LIVE API
 sellingPrice	DECIMAL	Sell price (after sell)
 sellingDate	TIMESTAMP	Sell date
+
+
 💰 Sample Dashboard Response
 json
 [
-  {
+  
     "id": 1,
     "type": "STOCK",
     "symbol": "AAPL",
@@ -91,9 +98,6 @@ json
     "qty": 10,              // From DB
     "currentPrice": 235.82, // LIVE Yahoo Finance
     "currentDate": "2026-02-01T18:20:00"  // LIVE
-  }
+  
 ]
-🔗 Live Price Sources
-Stocks: Yahoo Finance API (rate limited → $100 fallback)
 
-Crypto: CoinGecko API (free, 30 calls/min)
