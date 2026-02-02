@@ -21,17 +21,23 @@ public class AssetController {
 
     @PostMapping
     public UserAsset addAsset(@RequestBody UserAsset asset) {
+
         asset.setCurrentUpdated(LocalDateTime.now());
         asset.setLastUpdated(LocalDateTime.now());
 
-        // LIVE API price
+        // 👇 ensure sell fields exist in response
+        asset.setSellingPrice(null);
+        asset.setSellingDate(null);
+
         if ("CRYPTO".equals(asset.getAssetType())) {
             asset.setCurrentPrice(cryptoService.getCryptoPrice(asset.getSymbol()));
         } else {
             asset.setCurrentPrice(stockService.getCurrentPrice(asset.getSymbol()));
         }
+
         return repo.save(asset);
     }
+
 
     @PostMapping("/sell/{id}")
     public UserAsset sellAsset(@PathVariable Long id) {

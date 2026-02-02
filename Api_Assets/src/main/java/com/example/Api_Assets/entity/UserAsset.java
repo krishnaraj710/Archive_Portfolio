@@ -28,8 +28,8 @@ public class UserAsset {
     private LocalDateTime currentUpdated;
 
     // SELL INFO (updated when sold)
-    private BigDecimal sellingPrice;
-    private LocalDateTime sellingDate;
+    private BigDecimal sellingPrice=null;
+    private LocalDateTime sellingDate=null;
 
     private LocalDateTime lastUpdated;
 }
